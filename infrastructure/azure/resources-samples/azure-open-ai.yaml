@@ -3,14 +3,14 @@ kind: Deployment
 metadata:
   labels:
     app: dev-environment
-    developer: orsharon7
+    developer: adamschnaider
   name: text-embedding-ada-002
 spec:
   forProvider:
     cognitiveAccountIdSelector:
       matchLabels:
         app: dev-environment
-        developer: orsharon7
+        developer: adamschnaider
     model:
     - format: OpenAI
       name: text-embedding-ada-002
@@ -26,7 +26,7 @@ metadata:
   name: orro-oai-12
   labels:
     app: dev-environment
-    developer: orsharon7
+    developer: adamschnaider
 spec:
   forProvider:
     kind: OpenAI

@@ -165,7 +165,7 @@ jobs:
           kubectl config set-context --current --namespace=argocd
           argocd login --core --insecure
           kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}'
-          argocd app create azure-argocd-crossplane --repo https://github.com/orsharon7/azure-argocd-crossplane.git --path . --dest-server https://kubernetes.default.svc --dest-namespace default --sync-policy automated
+          argocd app create azure-argocd-crossplane --repo https://github.com/adamschnaider/azure-argocd-crossplane.git --path . --dest-server https://kubernetes.default.svc --dest-namespace default --sync-policy automated
           argocd app sync azure-argocd-crossplane
          
       - name: Get external IP of azure-argocd-crossplane

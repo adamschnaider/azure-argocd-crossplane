@@ -1,14 +1,14 @@
 apiVersion: dev.azure.upbound.io/v1alpha1
 kind: DevEnvironment
 metadata:
-  name: dev-env-orsharon7-50
+  name: dev-env-adamschnaider-50
 spec:
   parameters:
     region: southeastasia
-    resourceGroup: env-orsharon7-50-rg
-    developer: orsharon7
+    resourceGroup: env-adamschnaider-50-rg
+    developer: adamschnaider
     issueId: "50"
     storageAccountName: 7zptkctrit58purn
     oaiModelName: "text-embedding-ada-002"
-    oaiResourceName: "oai-orsharon7-50"
-    aksName: "orsharon7-50-aks"
+    oaiResourceName: "oai-adamschnaider-50"
+    aksName: "adamschnaider-50-aks"

@@ -1,11 +1,11 @@
 apiVersion: dev.azure.upbound.io/v1alpha1
 kind: DevEnvironment
 metadata:
-  name: dev-env-orsharon7-12
+  name: dev-env-adamschnaider-12
 spec:
   parameters:
     region: southeastasia
-    resourceGroup: env-orsharon7-12-rg
-    developer: orsharon7
+    resourceGroup: env-adamschnaider-12-rg
+    developer: adamschnaider
     issueId: "12"
     storageAccountName: 1737815471dx9p12cv
