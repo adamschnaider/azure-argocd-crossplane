@@ -7,7 +7,7 @@ on:
 
 jobs:
   get_issue_details:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     permissions:
       issues: write
     outputs:
@@ -47,7 +47,7 @@ jobs:
   
   cleanup_azure:
     needs: get_issue_details
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     permissions:
       issues: write
     if: needs.get_issue_details.outputs.environment_type != 'dev_env'
@@ -75,7 +75,7 @@ jobs:
           
   cleanup_crossplane:
     needs: get_issue_details
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     permissions:
       contents: write
       pull-requests: write
@@ -129,7 +129,7 @@ jobs:
 
   comment_completion:
     needs: [get_issue_details, cleanup_azure, cleanup_crossplane]
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     permissions:
       issues: write
       contents: read

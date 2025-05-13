@@ -140,7 +140,7 @@ jobs:
 
   comment_completion:
     needs: [provision, deploy_webapp, deploy_aks, deploy_dev_env]
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     permissions:
       issues: write
       contents: read
