@@ -5,3 +5,4 @@ dev-environment*
 archive/
 archive/*
 media/USER_STORY.md
+.vscode/*
