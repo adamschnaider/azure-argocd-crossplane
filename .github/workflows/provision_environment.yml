@@ -44,10 +44,10 @@ jobs:
         id: parse_issue
         run: |
           body="${{ github.event.issue.body }}"
-          app_name=$(echo "$body" | awk '/>>app_name<</{getline; getline; print}')
-          region=$(echo "$body" | awk '/>>region<</{getline; getline; print}')
-          environment_type=$(echo "$body" | awk '/>>environment_type<</{getline; getline; print}')
-          additional_notes=$(echo "$body" | awk '/>>additional_notes<</{getline; getline; print}')
+          app_name=$(echo "$body" | awk '/app_name/{getline; getline; print}')
+          region=$(echo "$body" | awk '/region/{getline; getline; print}')
+          environment_type=$(echo "$body" | awk '/environment_type/{getline; getline; print}')
+          additional_notes=$(echo "$body" | awk '/additional_notes/{getline; getline; print}')
 
           if [[ -z "$app_name" || -z "$region" || -z "$environment_type" ]]; then
             echo "Error: Failed to parse issue details." >&2
