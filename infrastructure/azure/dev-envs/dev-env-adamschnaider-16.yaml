@@ -1,0 +1,14 @@
+apiVersion: dev.azure.upbound.io/v1alpha1
+kind: DevEnvironment
+metadata:
+  name: dev-env-adamschnaider-16
+spec:
+  parameters:
+    region: eastus
+    resourceGroup: rg-adamschnaider-16
+    developer: adamschnaider
+    issueId: "16"
+    storageAccountName: s0aajowmjf2erzvi
+    oaiModelName: "text-embedding-ada-002"
+    oaiResourceName: "oai-adamschnaider-16"
+    aksName: "aks-adamschnaider-16"
