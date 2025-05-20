@@ -45,9 +45,21 @@ jobs:
         run: |
           body="${{ github.event.issue.body }}"
           app_name=$(echo "$body" | awk -F':' '/app_name/ {print $2}')
+          if [[ -z "$app_name" ]]; then
+            app_name=$(echo "$body" | awk -F':' '/app_name/ {getline; print $2}')
+          fi
           region=$(echo "$body" | awk -F':' '/region/ {print $2}')
+          if [[ -z "$region" ]]; then
+            region=$(echo "$body" | awk -F':' '/region/ {getline; print $2}')
+          fi
           environment_type=$(echo "$body" | awk -F':' '/environment_type/ {print $2}')
+          if [[ -z "$environment_type" ]]; then
+            environment_type=$(echo "$body" | awk -F':' '/environment_type/ {getline; print $2}')
+          fi
           additional_notes=$(echo "$body" | awk -F':' '/additional_notes/ {print $2}')
+          if [[ -z "$additional_notes" ]]; then
+            additional_notes=$(echo "$body" | awk -F':' '/additional_notes/ {getline; print $2}')
+          fi
 
           if [[ -z "$app_name" || -z "$region" || -z "$environment_type" ]]; then
             echo "Error: Failed to parse issue details." >&2
