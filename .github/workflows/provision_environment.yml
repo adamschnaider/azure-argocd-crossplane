@@ -44,21 +44,21 @@ jobs:
         id: parse_issue
         run: |
           body="${{ github.event.issue.body }}"
-          app_name=$(echo "$body" | awk -F':' '/app_name/ {print $2}')
+          app_name=$(echo "$body" | awk -F':' '/app_name/ {print $2}'| xargs)
           if [[ -z "$app_name" ]]; then
-            app_name=$(echo "$body" | awk -F':' '/app_name/ {getline; print $2}')
+            app_name=$(echo "$body" | awk -F':' '/app_name/ {getline; print $2}'| xargs)
           fi
-          region=$(echo "$body" | awk -F':' '/region/ {print $2}')
+          region=$(echo "$body" | awk -F':' '/region/ {print $2}'| xargs)
           if [[ -z "$region" ]]; then
-            region=$(echo "$body" | awk -F':' '/region/ {getline; print $2}')
+            region=$(echo "$body" | awk -F':' '/region/ {getline; print $2}'| xargs)
           fi
-          environment_type=$(echo "$body" | awk -F':' '/environment_type/ {print $2}')
+          environment_type=$(echo "$body" | awk -F':' '/environment_type/ {print $2}'| xargs)
           if [[ -z "$environment_type" ]]; then
-            environment_type=$(echo "$body" | awk -F':' '/environment_type/ {getline; print $2}')
+            environment_type=$(echo "$body" | awk -F':' '/environment_type/ {getline; print $2}'| xargs)
           fi
-          additional_notes=$(echo "$body" | awk -F':' '/additional_notes/ {print $2}')
+          additional_notes=$(echo "$body" | awk -F':' '/additional_notes/ {print $2}'| xargs)
           if [[ -z "$additional_notes" ]]; then
-            additional_notes=$(echo "$body" | awk -F':' '/additional_notes/ {getline; print $2}')
+            additional_notes=$(echo "$body" | awk -F':' '/additional_notes/ {getline; print $2}'| xargs)
           fi
 
           if [[ -z "$app_name" || -z "$region" || -z "$environment_type" ]]; then
