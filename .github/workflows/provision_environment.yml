@@ -55,7 +55,7 @@ jobs:
           fi
 
           unique_id="${{ github.event.issue.number }}-$(date +%s)"
-          resource_group_name="env-$app_name-$unique_id-rg"
+          resource_group_name="env-${app_name// /}-${unique_id// /}-rg"
 
           echo "app_name=$app_name" >> $GITHUB_OUTPUT
           echo "region=$region" >> $GITHUB_OUTPUT
