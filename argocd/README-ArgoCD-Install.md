@@ -89,7 +89,7 @@ Our Crossplane Azure providers (Network, Compute, Storage, etc.) reside in `/upb
 kubectl apply -f argocd/crossplane-bootstrap/crossplane-provider-azure.yaml
 ```
 > **Note:**
-> The crucial point here is to use the syncPolicy.automated flag as described in the docs: https://argo-cd.readthedocs.io/en/stable/user-guide/auto_sync/. Otherwise the deployment of the Crossplane `upbound-provider-family-azure` will throw an error.
+> The crucial point here is to use the syncPolicy.automated flag as described in the docs: https://argo-cd.readthedocs.io/en/stable/user-guide/auto_sync/. Otherwise the deployment of the Crossplane Azure providers will throw an error.
 
 The automated syncPolicy makes sure that child apps are automatically created, synced, and deleted when the manifest is changed.
 
